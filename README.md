@@ -45,7 +45,7 @@ Example Playbook
 
 ansible-playbook -i \<inventory file\> \<playbook name\> -e "hosts=\<deploy targets\>"
 
-...
+```
 - hosts: "{{ hosts }}"
 
   vars:
@@ -55,7 +55,7 @@ ansible-playbook -i \<inventory file\> \<playbook name\> -e "hosts=\<deploy targ
 
   roles:
     - check_etc_hosts
-...
+```
 
 License
 -------
