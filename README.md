@@ -58,7 +58,7 @@ ansible-playbook -i <inventory file> <playbook name> -e "hosts=<deploy targets>"
 License
 -------
 
-BSD
+GNU General Public License v3.0
 
 Author Information
 ------------------
