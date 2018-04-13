@@ -1,6 +1,6 @@
 galaxy_info:
   author: Bob Boldin
-  description: 
+  description: "Ansible Role to validate expected endpoint dependencies"
   license: GNU
   min_ansible_version: 1.9
   platforms:

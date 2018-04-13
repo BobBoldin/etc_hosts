@@ -2,11 +2,11 @@
 # tasks file for etc_hosts
 
 - name: check for any etc hosts dependencies
-  getent: database=hosts key={{ etc_hosts[item].fqdn }} 
+  getent: database=hosts key={{ etc_hosts[item].fqdn }}
   register: etc_hosts_check
-  with_items: etc_hosts_deps
+  with_items: "{{ etc_hosts_deps }}"
 
 - name: validate ipv4 matches expected value
   fail: msg="Entry IP mismatch {{ etc_hosts[item.item].fqdn }} Expected {{ etc_hosts[item.item].ipv4 }} Received {{ item.ansible_facts.getent_hosts | list }}"
-  with_items: etc_hosts_check.results
+  with_items: "{{ etc_hosts_check.results }}"
   when: etc_hosts[item.item].ipv4 not in item.ansible_facts.getent_hosts
